@@ -1,0 +1,335 @@
+html {
+  background-color:#333333;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.App {
+  text-align: center;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.App-Wrapper {
+  width:80%;
+  margin:0 auto;
+}
+
+.header-container {
+  display:flex;
+  justify-content: space-between;
+  margin-top:20px;
+}
+
+.header-container h1 {
+  color:#fafafa;
+}
+
+.header-container img {
+  width:125px;
+}
+
+.form-wrapper {
+  margin-bottom:4rem;
+}
+
+.form-wrapper .input-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right:25px;
+}
+
+.form-wrapper label {
+  color:#fafafa;
+  position: absolute;
+  top:10px;
+  left:0;
+  z-index:0;
+}
+
+.form-wrapper input {
+  width:250px;
+  height:40px;
+  background-color:transparent;
+  border:none;
+  border-bottom:3px solid #fafafa;
+  color:#fafafa;
+  font-size:1.2rem;
+  position: relative;
+  z-index:1;
+}
+
+.form-wrapper input + label {
+  transition:0.4s;
+}
+
+.form-wrapper input:focus {
+  outline:none;
+  border-bottom-color:#6e5494;
+  transition:0.4s;
+}
+
+.form-wrapper input:focus + label {
+  transition: transform 0.4s;
+  transform: scale(0.8) translateX(-8px) translateY(-30px);
+  color:#6e5494;
+}
+
+.form-wrapper input:valid + label {
+  transform: scale(0.8) translateX(-8px) translateY(-30px);
+  color:#6e5494;
+}
+
+.form-wrapper input:valid {
+  border-bottom-color:#6e5494;
+}
+
+.form-wrapper button {
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: #333333;
+  padding: 0.5em 1em;
+  outline: none;
+  border: 2px solid #6e5494;
+  border-radius:5px;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out;
+}
+
+.form-wrapper button::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #6e5494;
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.45s ease-in-out;
+}
+
+.form-wrapper button:hover {
+  cursor: pointer;
+  color: #f3f3f3;
+}
+
+.form-wrapper button:hover::before {
+  transform: translate(-50%, -50%) scale(15);
+}
+
+.user-profile-wrapper {
+  display:flex;
+  flex-flow:row wrap;
+  justify-content: space-evenly;
+  align-items:flex-start;
+  padding:2rem;
+}
+
+.user-profile-wrapper .repos-wrapper {
+  padding-bottom:0;
+}
+
+.user-wrapper, .repos-wrapper, .stats-wrapper {
+  width:45%;
+  border:1px solid #6e5494;
+  border-radius:5px;
+  background-color:#6e5494;
+  color:#ffffff;
+  padding:2rem 0;
+}
+
+.user-wrapper .image-wrapper button {
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: #333333;
+  padding: 0.5em 1em;
+  outline: none;
+  border: 2px solid #6e5494;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  background-color: #333;
+  overflow: hidden;
+}
+
+.user-wrapper .image-wrapper button:hover {
+  background-color:#474747;
+  cursor:pointer;
+}
+
+.user-wrapper .image-wrapper button > a {
+  text-decoration: none;
+  color:#ffffff;
+}
+
+.user-wrapper .image-wrapper img {
+  background-color:#ffffff;
+}
+
+.user-wrapper .image-wrapper h2 {
+  margin:15px 0;
+}
+
+.user-wrapper .image-wrapper p {
+  margin:10px 0;
+}
+
+.repos-wrapper .repo-header {
+  position: relative;
+  top:9px;
+}
+
+.repos-wrapper h2 {
+  margin:15px 0;
+}
+
+.repos-wrapper .repo-content {
+  text-align:left;
+  clear:both;
+  height:36px;
+  border-bottom:1px solid #333;
+  padding:7px 2rem 8px;
+}
+
+.repos-wrapper .repo-content:last-child {
+  border:none;
+}
+
+.repos-wrapper button {
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: #333333;
+  padding: 0.5em 1em;
+  outline: none;
+  border: 2px solid #6e5494;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  background-color: #333;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out;
+  float:right;
+}
+
+.repos-wrapper button:hover {
+  background-color:#474747;
+  cursor:pointer;
+}
+
+.repos-wrapper button > a {
+  text-decoration: none;
+  color:white;
+}
+
+.commits-header {
+  padding:2rem 0;
+  text-align:center;
+  color:#ffffff;
+}
+
+.commits-wrapper {
+  width:90%;
+  margin:0 auto;
+}
+
+.commits-wrapper table {
+  margin:0 auto;
+  background-color:#f5f5f5;
+  border:5px solid #6e5494;
+  border-radius:5px;
+  border-collapse: collapse;
+}
+
+.commits-wrapper table thead tr {
+  background-color:#6e5494;
+  color:#ffffff;
+  border-bottom:5px solid #6e5494;
+}
+
+.commits-wrapper table th {
+  padding:0.5rem 0;
+  border-right:5px solid #6e5494;
+}
+
+.commits-wrapper table th:last-child {
+  border:none;
+}
+
+.commits-wrapper table td {
+  padding:1rem;
+}
+
+.commits-wrapper table tbody tr {
+  border-bottom:1px solid #333;
+}
+
+.commits-wrapper table tbody tr:hover {
+  background-color:#8b76a9;
+  cursor:pointer;
+  color:#ffffff;
+}
+
+.commits-wrapper table tbody tr td:last-child a {
+  color:#bd2c00;
+}
+
+.commits-wrapper table tbody tr:hover > td:last-child a {
+  color:#fafafa;
+}
+
+.commits-wrapper table tbody tr:last-child {
+  border:none;
+}
+
+.commits-footer {
+  width:68%;
+  margin:0 auto;
+  padding:2rem 0;
+  text-align:center;
+}
+
+.commits-footer button{
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5em 1em;
+  outline: none;
+  border: 2px solid #6e5494;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  background-color: #6e5494;
+}
+
+.commits-footer button a {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.stats-wrapper p {
+  text-align:left;
+}
